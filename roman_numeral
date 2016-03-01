@@ -1,0 +1,57 @@
+def roman_numeral(number)
+  quotient = number / 1000
+  #do i need an M or not?
+  if quotient > 0
+    return ("M" * quotient) + roman_numeral(number % 1000)
+  end
+
+  quotient = number / 500
+  if quotient > 0
+    return ("D" * quotient) + roman_numeral(number % 500)
+  end
+
+  quotient = number / 100
+  if quotient > 0
+      return ("C" * quotient) + roman_numeral(number % 100)
+  end
+
+  quotient = number / 50
+  if quotient > 0
+      return ("L" * quotient) + roman_numeral(number % 50)
+  end
+
+  quotient = number / 10
+  if quotient > 0
+      return ("X" * quotient) + roman_numeral(number % 10)
+  end
+
+  quotient = number / 5
+  if quotient > 0
+      return ("V" * quotient) + roman_numeral(number % 5)
+  end
+
+  "I" * number
+
+end
+
+p roman_numeral(99)
+
+ array = [
+  [1000, "M"],
+  [500, "D"],
+  [100, "C"],
+  [50, "L"],
+  [10, "X"],
+  [5, "V"],
+  [1, "I"],
+ ]
+
+def roman_numeral_two(number)
+  array.each do
+  quotient = number / array[0]
+  if quotient > 0
+    return ("D" * quotient) + roman_numeral(number % 500)
+  end
+
+
+end
